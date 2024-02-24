@@ -44,8 +44,8 @@ setInterval(fetchDataAndStore, 10000);  // Fetch data every 10 seconds
 // routes
 
 app.get("/", (req, res) => {
-    res.send("Hello World");
-});
+  res.send("QuadB - WazirX API Assignment");
+  });
 
 app.get("/crypto_data", Crypto_data.get_crypto_data);
 
