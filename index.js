@@ -15,7 +15,7 @@ mongoose
     console.log(err);
   });
 
-const port = 5000;
+const port = 5000 || process.env.PORT;
 
 const app = express();
 app.use(cors());
