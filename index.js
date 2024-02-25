@@ -19,6 +19,9 @@ const port = 5000;
 
 const app = express();
 app.use(cors());
+app.use(express.json());
+app.use(express.static(__dirname + '/frontend'));
+
 
 // Fetch data from WazirX API and store in the database
 async function fetchDataAndStore() {
@@ -44,7 +47,7 @@ setInterval(fetchDataAndStore, 10000);  // Fetch data every 10 seconds
 // routes
 
 app.get("/", (req, res) => {
-  res.send("QuadB - WazirX API Assignment");
+  res.sendFile(__dirname + "/index.html");
   });
 
 app.get("/crypto_data", Crypto_data.get_crypto_data);

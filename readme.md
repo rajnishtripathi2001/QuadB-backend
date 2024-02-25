@@ -7,8 +7,10 @@
 
 ## Usage
 1. Open the browser
-2. Go to the server address (default: http://localhost:5000)
-3. Run Index.html file in frontend folder to see the data in the browser.
+2. Go to the server address (default: http://localhost:5000) to see the web application.
+
+## Deployed version
+The web application is deployed on Heroku. You can access it [here](/).
 
 ## Dependencies
 - Node.js
