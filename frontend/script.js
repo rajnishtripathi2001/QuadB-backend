@@ -4,7 +4,7 @@ var Data =[];
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    fetch('http://localhost:5000/crypto_data') //https://ambitious-haircut-production.up.railway.app/crypto_data
+    fetch('https://ambitious-haircut-production.up.railway.app/crypto_data') // replace with "http://localhost:5000/crypto_data" for local server
         .then(response => response.json())
         .then(data => {
             Data = data.data;

@@ -10,7 +10,7 @@
 2. Go to the server address (default: http://localhost:5000) to see the web application.
 
 ## Deployed version
-The web application is deployed on Heroku. You can access it [here](/).
+The web application is deployed on Heroku. You can access it [here](https://ambitious-haircut-production.up.railway.app/).
 
 ## Dependencies
 - Node.js
