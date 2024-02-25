@@ -42,7 +42,7 @@ async function fetchDataAndStore() {
     }
 }
 
-setInterval(fetchDataAndStore, 10000);  // Fetch data every 10 seconds
+setInterval(fetchDataAndStore, 60000);  // Fetch data every 1 minute
 
 // routes
 

@@ -1,4 +1,5 @@
 const table = document.getElementsByClassName('crypto-table-body'); 
+const avg = document.getElementById('avg-price');
 
 var Data =[];
 
@@ -8,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             Data = data.data;
-            console.log(Data);
             renderData(Data); 
+            calculateAverage(Data);
         });    
 });
 
@@ -20,27 +21,21 @@ function renderData(data) {
         row.className = 'crypto-table-row';
 
         const indexCell = document.createElement('p');
-        indexCell.className = 'crypto-table-data-index';
         indexCell.textContent =  index + 1;
 
         const platformCell = document.createElement('p');
-        platformCell.className = 'crypto-table-data-name';
         platformCell.textContent = item.name;
 
         const lastTradedPriceCell = document.createElement('p');
-        lastTradedPriceCell.className = 'crypto-table-data last';
-        lastTradedPriceCell.textContent = item.last ;
+        lastTradedPriceCell.textContent = ' ₹'+item.last ;
 
         const buySellPriceCell = document.createElement('p');
-        buySellPriceCell.className = 'crypto-table-data-bs ';
         buySellPriceCell.textContent = ' ₹'+item.buy + ' / ' + ' ₹'+ item.sell;
 
         const differenceCell = document.createElement('p');
-        differenceCell.className = 'crypto-table-data-volume ';
         differenceCell.textContent = item.volume; 
 
         const savingsCell = document.createElement('p');
-        savingsCell.className = 'crypto-table-data ';
         savingsCell.textContent = item.base_unit; 
 
         row.appendChild(indexCell);
@@ -53,3 +48,14 @@ function renderData(data) {
         table[0].appendChild(row);
     });
 }
+
+// calculate average Last Traded Price
+
+function calculateAverage(data) {
+    let sum = 0;
+    data.forEach((item) => {
+        sum += Number(item.last);
+    });
+    avg.textContent = '₹' + (sum / Data.length).toFixed(0);
+}
+
