@@ -47,8 +47,12 @@ setInterval(fetchDataAndStore, 10000);  // Fetch data every 10 seconds
 // routes
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/frontend/index.html");
   });
+
+app.get("/about", (req, res) => {
+  res.sendFile(__dirname + "/frontend/about.html");
+});
 
 app.get("/crypto_data", Crypto_data.get_crypto_data);
 
